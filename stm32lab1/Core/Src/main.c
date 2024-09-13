@@ -119,7 +119,7 @@ int main(void)
 		  flag_yellow = 1;
 		  flag_green = 0;
 	  }
-	  else if(count >= 2 && flag_yellow = 1){
+	  else if(count >= 2 && flag_yellow == 1){
 		  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
 		  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET);
 		  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, RESET);
