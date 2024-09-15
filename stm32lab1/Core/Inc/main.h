@@ -68,6 +68,8 @@ void Error_Handler(void);
 #define LED_11_GPIO_Port GPIOB
 #define LED_12_Pin GPIO_PIN_11
 #define LED_12_GPIO_Port GPIOB
+#define LED_4_Pin GPIO_PIN_3
+#define LED_4_GPIO_Port GPIOB
 #define LED_5_Pin GPIO_PIN_4
 #define LED_5_GPIO_Port GPIOB
 #define LED_6_Pin GPIO_PIN_5
