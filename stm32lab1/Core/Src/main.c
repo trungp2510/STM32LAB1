@@ -100,6 +100,7 @@ int main(void)
 	  if(count >=2){
 		  HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 		  HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
+		  count = 0;
 	  }
 	  count ++;
 	  HAL_Delay(1000);
