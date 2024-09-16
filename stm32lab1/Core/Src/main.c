@@ -138,6 +138,21 @@ void clearNumberOnClock(int num){
 			break;
 		}
 }
+void clearAllClock (){
+	HAL_GPIO_WritePin(LED_1_GPIO_Port, LED_1_Pin, RESET);
+	HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, RESET);
+	HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, RESET);
+	HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, RESET);
+	HAL_GPIO_WritePin(LED_5_GPIO_Port, LED_5_Pin, RESET);
+	HAL_GPIO_WritePin(LED_6_GPIO_Port, LED_6_Pin, RESET);
+	HAL_GPIO_WritePin(LED_7_GPIO_Port, LED_7_Pin, RESET);
+	HAL_GPIO_WritePin(LED_8_GPIO_Port, LED_8_Pin, RESET);
+	HAL_GPIO_WritePin(LED_9_GPIO_Port, LED_9_Pin, RESET);
+	HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, RESET);
+	HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, RESET);
+	HAL_GPIO_WritePin(LED_12_GPIO_Port, LED_12_Pin, RESET);
+
+}
 /* USER CODE END 0 */
 
 /**
@@ -175,19 +190,33 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   //TODO ex10
-  int hr = 12;
-  int min = 12;
-  int sec = 12;
-  setNumberOnClock(12);
+  int hr = 0;
+  int min = 0;
+  int sec = 0;
   while (1)
   {
-	  if(sec != min && sec != hr){
 
+	  int pos_sec = sec/5;
+	  int pos_min = min/5;
+	  if(sec%5 == 0){
+		  clearAllClock();
+		  setNumberOnClock(pos_sec);
+		  setNumberOnClock(pos_min);
+		  setNumberOnClock(hr);
 	  }
-	  setNumberOnClock(sec++);
-	  if(sec >= 13){
-
+	  if(sec >= 60){
+		  sec = 0;
+		  min++;
 	  }
+	  if(min >= 60){
+		  min = 0;
+	  	  hr++;
+	  }
+	  if(hr >= 12){
+	  	  hr = 0;
+	  }
+	  sec++;
+	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
