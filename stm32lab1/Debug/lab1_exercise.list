@@ -326,14 +326,14 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   //TODO ex10
-  int hr = 0;
- 80002da:	2300      	movs	r3, #0
+  int hr = 5;
+ 80002da:	2305      	movs	r3, #5
  80002dc:	617b      	str	r3, [r7, #20]
-  int min = 0;
- 80002de:	2300      	movs	r3, #0
+  int min = 49;
+ 80002de:	2331      	movs	r3, #49	; 0x31
  80002e0:	613b      	str	r3, [r7, #16]
-  int sec = 0;
- 80002e2:	2300      	movs	r3, #0
+  int sec = 45;
+ 80002e2:	232d      	movs	r3, #45	; 0x2d
  80002e4:	60fb      	str	r3, [r7, #12]
   while (1)
   {

@@ -190,9 +190,9 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   //TODO ex10
-  int hr = 0;
-  int min = 0;
-  int sec = 0;
+  int hr = 5;
+  int min = 49;
+  int sec = 45;
   while (1)
   {
 
